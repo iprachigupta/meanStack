@@ -18,6 +18,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { BrandsComponent } from './components/manage/brands/brands.component';
+import { BrandFormComponent } from './components/manage/brand-form/brand-form.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { FormsModule } from '@angular/forms';
     CategoryFormComponent,
     HomeComponent,
     PageNotFoundComponent,
+    BrandsComponent,
+    BrandFormComponent,
   ],
   imports: [
     BrowserModule,
