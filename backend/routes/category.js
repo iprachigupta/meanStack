@@ -1,10 +1,9 @@
 const express = require('express')
 const router = express.Router();
-const Category = require('../models/category');
-const { addCategory, updateCategory, deleteCategory } = require('../controllers/categoryController');
+const { addCategory, updateCategory, deleteCategory, getCategories, getCategoryById } = require('../controllers/categoryController');
 
 //add category
-router.post("", async (req , res)=>{
+router.post("/add", async (req , res)=>{
     const model = req.body;
     const response = await addCategory(model);
     res.status(200).json(response);
@@ -22,6 +21,15 @@ router.delete("/:id", async (req, res)=>{
     res.status(200).json({ message: "Category Deleted"});
 });
 
-//get category
+//get 
+router.get('/' , async(req, res)=>{
+    const categories = await getCategories();
+    res.status(200).json({categories})
+});
+
+router.get('/:id', async (req, res)=>{
+    const category = await getCategoryById(req.params['id']);
+    res.status(200).json({category});
+});
 
 module.exports = router;

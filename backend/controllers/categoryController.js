@@ -18,4 +18,14 @@ async function deleteCategory(id){
     return;
 }
 
-module.exports = {addCategory, updateCategory, deleteCategory};
+async function getCategories(){
+    const categories = await Category.find();
+    return categories;
+}
+
+async function getCategoryById(id) {
+    const category = await Category.findById(id);
+    return category;
+}
+
+module.exports = {addCategory, updateCategory, deleteCategory, getCategories, getCategoryById};

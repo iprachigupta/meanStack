@@ -1,1 +1,26 @@
-<p>category-form works!</p>
+<div class="flex flex-col items-center px-40 mt-10">
+    <h1 *ngIf="isEdit; else addTitle">Update Category</h1>
+    <ng-template #addTitle><h1>Add New Category</h1></ng-template>
+
+    <form class="shadow-sm w-96 p-4">
+        <div class="flex flex-wrap">
+            <div class="w-full gap-4">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" [(ngModel)]="name" name="name" required />
+                </mat-form-field>
+            </div>
+            <div class="w-full flex justify-center mt-4">
+                <button *ngIf="isEdit; else addButton" mat-raised-button color="primary" 
+                    [disabled]="!name" (click)="update()">
+                    Update
+                </button>
+                <ng-template #addButton>
+                    <button mat-raised-button color="primary" [disabled]="!name" (click)="add()">
+                        Add
+                    </button>
+                </ng-template>
+            </div>
+        </div>
+    </form>
+</div>
