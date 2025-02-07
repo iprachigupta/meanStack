@@ -35,7 +35,7 @@ export class BrandFormComponent {
       .addBrand(this.name)
       .pipe(takeUntil(this.destroy$))
       .subscribe((result: any) => {
-        alert('Category added');
+        alert('Brand added');
         this.router.navigateByUrl('/admin/brand');
       });
   }
@@ -45,7 +45,7 @@ export class BrandFormComponent {
       .updateBrand(this.id, this.name)
       .pipe(takeUntil(this.destroy$))
       .subscribe((result: any) => {
-        alert('Category updated');
+        alert('Brand updated');
         this.router.navigateByUrl('/admin/brand');
       });
   }

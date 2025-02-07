@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const CategoryRoute = require("./routes/category");
 const BrandRoute = require("./routes/brand");
+const ProductRoute = require('./routes/product');
 
 require("dotenv").config();
 require("./db/db.config");
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 app.use("/category", CategoryRoute);
 app.use("/brand", BrandRoute);
+app.use("/product", ProductRoute);
 
 app.listen(port, () => {
   console.log("Server Running on PORT", port);

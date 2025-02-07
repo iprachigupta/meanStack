@@ -6,6 +6,8 @@ import { CategoryFormComponent } from './components/manage/category-form/categor
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { BrandsComponent } from './components/manage/brands/brands.component';
 import { BrandFormComponent } from './components/manage/brand-form/brand-form.component';
+import { ProductsComponent } from './components/manage/products/products.component';
+import { ProductFormComponent } from './components/manage/product-form/product-form.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,18 @@ const routes: Routes = [
   {
     path: 'admin/brand/:id',
     component: BrandFormComponent,
+  },
+  {
+    path: 'admin/product',
+    component: ProductsComponent,
+  },
+  {
+    path: 'admin/product/add',
+    component: ProductFormComponent,
+  },
+  {
+    path: 'admin/product/:id',
+    component: ProductFormComponent,
   },
   {
     path: '**',

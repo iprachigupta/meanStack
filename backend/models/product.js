@@ -3,12 +3,14 @@ const productSchema = new mongoose.Schema({
     name: String,
     shortDesc: String,
     description: String,
-    purchasePrice: Number,
-    sellingPrice: Number,
+    price: Number,
+    discount: Number,
+    rating: Number,
     images: Array(String),
-    categoryId : { type: Schema.Types.ObjectId, ref: "categories"},
+    categoryId : { type: mongoose.Schema.Types.ObjectId, ref: "categories"},
+    brandId : { type: mongoose.Schema.Types.ObjectId, ref: "brands"},
 }, {timestamps: true});
 
 const Product = mongoose.model("products", productSchema);
 
-module.exports = Product;
+module.exports = Product; 

@@ -17,9 +17,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrandsComponent } from './components/manage/brands/brands.component';
 import { BrandFormComponent } from './components/manage/brand-form/brand-form.component';
+import { ProductsComponent } from './components/manage/products/products.component';
+import { ProductFormComponent } from './components/manage/product-form/product-form.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,8 @@ import { BrandFormComponent } from './components/manage/brand-form/brand-form.co
     PageNotFoundComponent,
     BrandsComponent,
     BrandFormComponent,
+    ProductsComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { BrandFormComponent } from './components/manage/brand-form/brand-form.co
     HttpClientModule,
     MatIconModule,
     FormsModule,
-    
+    ReactiveFormsModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
