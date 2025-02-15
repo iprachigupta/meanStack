@@ -8,6 +8,7 @@ async function addProduct(model) {
     return product.toObject();
 };
 
+r
 async function updateProduct(id, model) {
     await Product.findByIdAndUpdate(id, model)
 };

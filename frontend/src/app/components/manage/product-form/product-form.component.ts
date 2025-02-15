@@ -85,6 +85,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
       .addProduct(value as any)
       .pipe(takeUntil(this.destroy$))
       .subscribe((result) => {
+        console.log(result);
         alert('Product added');
         this.router.navigateByUrl('/admin/product');
       });
